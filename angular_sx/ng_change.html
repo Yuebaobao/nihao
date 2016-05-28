@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<!--ng-change表示当内容发生改变时触发-->
+	<div ng-app='myapp' ng-controller='mychange'>
+		<input type="text" ng-change='myChange()' ng-model='hehe'>
+		<p>呵呵{{ count }}</p>
+	</div>
+	<script src="./angular.min.js"></script>
+	<script>
+		var myapp = angular.module('myapp', []);
+		myapp.controller('mychange', function ($scope) {
+			$scope.hehe = '王玥';
+			$scope.count = 0;
+			$scope.myChange = function () {
+				$scope.count++;
+			}
+
+
+		})
+	</script>
+</body>
+
+</html>

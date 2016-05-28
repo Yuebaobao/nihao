@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<!--ng-bind表示使用给定的变量或表达式的值来替换 HTML 元素的内容。-->
+	<div class="box" ng-app=''>
+		<input type="text" ng-model="name">
+		<p>姓名：{{ name }}</p>
+		<h4 ng-bind='name'></h4>
+		<h1 class='ng-bind:name'></h1>
+
+	</div>
+	<script src="./angular.min.js"></script>
+</body>
+
+</html>

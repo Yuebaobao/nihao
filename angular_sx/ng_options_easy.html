@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div ng-app='myapp' ng-controller='myoption'>
+		<select ng-model='name' ng-options='x for x in names'></select>
+		<p>{{ name }}</p>
+
+	</div>
+	<script src='/angular.min.js'></script>
+	<script>
+		var myapp = angular.module('myapp', []);
+		myapp.controller('myoption', function ($scope) {
+			$scope.names = ['wang', 'yue', 'hao', 'ren'];
+
+		})
+	</script>
+</body>
+
+</html>

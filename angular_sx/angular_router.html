@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div ng-app='myapp' ng-controller='myrouter'>
+		<a href="" ng-click="change('/news')">新闻页</a>
+		<a href="" ng-click="change('/yule')">娱乐页</a>
+		<a href="" ng-click="change('/tengxun')">腾讯页</a>
+		<div ng-view class="page"></div>
+	</div>
+	<script src='./angular.min.js'></script>
+	<script src='./angular-route.min.js'></script>
+	<script src='./angular-animate.min.js'></script>
+	<script>
+		var myapp = angular.module('myapp', ['ngRoute']);
+		myapp.config(['$routeProvider', function ($routeProvider) {
+			$routeProvider
+				.when('/news', {
+					templateUrl: "news.html",
+					controller: "myrouter"
+				}).when('/yule', {
+					templateUrl: "yule.html",
+					controller: "myrouter"
+				}).when('/tengxun', {
+					templateUrl: "tengxun.html",
+					controller: "myrouter"
+				}).otherwise({
+					redirectTo: '/news'
+				})
+
+
+		}])
+		myapp.controller('myrouter', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+			$scope.change = function (url) {
+				if (typeof url == undefined) {
+					$scope.url = '/news';
+				} else {
+					$scope.url = url;
+				}
+				if (url == 'back') {
+					$window.history.back();
+				} else {
+					$location.path($scope.url);
+				}
+			}
+
+
+		}])
+	</script>
+</body>
+
+</html>

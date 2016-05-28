@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<!--ng-blur表示失去焦点时执行的表达式-->
+	<!--a/input/select/textarea支持-->
+	<div ng-app=''>
+		<input type="text" ng-blur='count=count+1' ng-init="count=0">
+		<p>{{ count }}</p>
+
+	</div>
+	<script src="./angular.min.js"></script>
+</body>
+
+</html>

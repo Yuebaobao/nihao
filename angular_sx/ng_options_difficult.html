@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!--x.name是在options里呈现的内容    name则是x,循环出来的names里的每个对象-->
+
+<body>
+	<div ng-app='myapp' ng-controller='myoption'>
+		<select ng-model='name' ng-options='x.name for x in names'></select>
+		<p>{{ name.age }}</p>
+
+	</div>
+	<script src='/angular.min.js'></script>
+	<script>
+		var myapp = angular.module('myapp', []);
+		myapp.controller('myoption', function ($scope) {
+			$scope.names = [
+				{
+					name: "wangyue",
+					age: 10
+				},
+				{
+					name: "wangyue1",
+					age: 12
+				},
+				{
+					name: "wangyue2",
+					age: 16
+				}
+			];
+
+		})
+	</script>
+</body>
+
+</html>

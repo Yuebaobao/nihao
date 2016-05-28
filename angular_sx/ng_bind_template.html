@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<!--ng-bind-template表示将给定表达式的值替换html内容-->
+	<div ng-app='myapp' ng-controller='mytexts'>
+		<p ng-bind-template='{{ name }} {{ name2 }}'></p>
+	</div>
+	<script src='./angular.min.js'></script>
+	<script>
+		var myapp = angular.module('myapp', []);
+		myapp.controller('mytexts', function ($scope) {
+			$scope.name = '你好，我是王玥';
+			$scope.name2 = "haha"
+
+		})
+	</script>
+</body>
+
+</html>

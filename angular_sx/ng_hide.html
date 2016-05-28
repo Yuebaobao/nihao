@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 20px;
+			height: 20px;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body ng-app=''>
+	隐藏元素
+	<input type="checkbox" ng-model='myval'>
+	<div ng-hide='myval'></div>
+	<script src='./angular.min.js'></script>
+</body>
+
+</html>

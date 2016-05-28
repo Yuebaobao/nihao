@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div ng-app='myapp' ng-controller="myfrom">
+		<form novalidate>
+			firstname:
+			<!--model默认是复制olduser的user，当手动输入之后，会改变user的值-->
+			<input type="text" ng-model='user.firstname'>
+			<br/> lastname:
+			<input type="text" ng-model='user.lastname'>
+		</form>
+		<p>{{ user }}</p>
+		<p>{{ olduser }}</p>
+	</div>
+	<script src='./angular.min.js'></script>
+	<script>
+		var myapp = angular.module("myapp", []);
+		myapp.controller("myfrom", function ($scope) {
+			$scope.olduser = {
+					firstname: "wangyue",
+					lastname: "zhaoerqian"
+				}
+				//user是复制的olduser，olduser是在控制器中定义的
+			$scope.user = angular.copy($scope.olduser);
+		})
+	</script>
+</body>
+
+</html>

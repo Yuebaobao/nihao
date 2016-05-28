@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.striped {
+			color: white;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body ng-app="myApp">
+
+	<table ng-controller="myCtrl">
+		<tr ng-repeat="x in records" ng-class-odd="'striped'">
+			<td>{{x.Name}}</td>
+			<td>{{x.Country}}</td>
+		</tr>
+	</table>
+	<script src='./angular.min.js'></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function ($scope) {
+			$scope.records = [
+				{
+					"Name": "Alfreds Futterkiste",
+					"Country": "Germany"
+    },
+				{
+					"Name": "Berglunds snabbk",
+					"Country": "Sweden"
+    },
+				{
+					"Name": "Centro comercial Moctezuma",
+					"Country": "Mexico"
+    },
+				{
+					"Name": "Ernst Handel",
+					"Country": "Austria"
+    }
+  ]
+		});
+	</script>
+</body>
+
+</html>
